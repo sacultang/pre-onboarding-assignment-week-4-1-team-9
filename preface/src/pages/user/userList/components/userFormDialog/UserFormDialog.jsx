@@ -33,7 +33,16 @@ const UserPostFormDialog = ({ selected, setSelected, setOpenDialog, openDialog, 
   const [postDaumVisible, setPostDaumVisible] = useState(true)
   const [birthDate, setBirthDate] = useState(INITIAL_BIRTH_DATE)
   const dispatch = useDispatch()
-
+  const isClose = useCallback(postBody => {
+    if (
+      PHONE_REGEX.test(postBody.phone_number) &
+      EMAIL_REGEX.test(postBody.email) &
+      (postBody.password.length >= 6) &
+      (postBody.name.length > 0)
+    ) {
+      return true
+    }
+  }, [])
   const handleClose = () => {
     setOpenDialog(false)
     setBirthDate(INITIAL_BIRTH_DATE)
@@ -63,6 +72,7 @@ const UserPostFormDialog = ({ selected, setSelected, setOpenDialog, openDialog, 
       }
       dispatch({ type: EDIT_USER, payload: putBody })
       dispatch({ type: GET_USER_LIST_PAGE, payload: { page, limit } })
+      handleClose()
     } else {
       const postBody = {
         ...newSelected,
@@ -75,8 +85,10 @@ const UserPostFormDialog = ({ selected, setSelected, setOpenDialog, openDialog, 
       }
       dispatch({ type: ADD_USER, payload: postBody })
       dispatch({ type: GET_USER_LIST_PAGE, payload: { page, limit } })
+      if (isClose(postBody)) {
+        handleClose()
+      }
     }
-    handleClose()
   }
 
   return (

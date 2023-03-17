@@ -16,7 +16,6 @@ import { maskingName } from 'utils/maskingName'
 const UserListTableToolbar = ({ selected, setSelected, page, limit }) => {
   const dispatch = useDispatch()
   const [openDialog, setOpenDialog] = useState(false)
-
   const handleUserDelete = () => {
     const confirmMessage = window.confirm('정말 삭제 하시겠습니까?')
     if (confirmMessage) {

@@ -4,7 +4,7 @@
       "id": 1,
       "uuid": "911cbfbf-ffe6-46bf-a4d8-94b6422689fa",
       "photo": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1045.jpg",
-      "name": "Joseph 원d",
+      "name": "Joseph 원",
       "email": "46@hanmail.net",
       "age": 49,
       "gender_origin": 4,
@@ -12,9 +12,9 @@
       "phone_number": "010-6204-9141",
       "address": "Hungary 거창구",
       "detail_address": "3041 잠실면 Apt. 593",
-      "last_login": "2023-03-16T06:48:40.715Z",
+      "last_login": "2023-03-17T01:46:50.355Z",
       "created_at": "2022-04-12T22:13:38.068Z",
-      "updated_at": "2023-03-16T06:48:40.715Z"
+      "updated_at": "2023-03-17T01:46:50.355Z"
     },
     {
       "id": 2,
@@ -1636,6 +1636,22 @@
       "birth_date": "2023-03-16T06:54:24.626Z",
       "uuid": "f3d02691-98e6-4395-9ada-8219046644cc",
       "id": 103
+    },
+    {
+      "email": "abc@google.com",
+      "password": "$2a$10$U9XDG6Ur.KHYMJVErZd.gOWZUGpJWl3BRklhlM9zifS7w506dER9i",
+      "name": "ab",
+      "phone_number": "010-1234-1234",
+      "address": "서울 성동구 서울숲길 17 (성수동1가, 성수파크빌)",
+      "detail_address": "1234",
+      "last_login": "2023-03-17T01:49:10.677Z",
+      "created_at": "2023-03-17T01:49:10.677Z",
+      "updated_at": "2023-03-17T01:49:10.677Z",
+      "age": 125,
+      "gender_origin": "",
+      "birth_date": "2023-03-17T01:49:10.677Z",
+      "uuid": "f8f9ecbe-5938-4194-997a-c379a2725802",
+      "id": 104
     }
   ],
   "userSetting": [
