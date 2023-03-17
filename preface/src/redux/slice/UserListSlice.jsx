@@ -15,7 +15,9 @@ const userListSlice = createSlice({
   reducers: {
     getUserListAction: (state, { payload }) => {
       state.userList = payload
-        .filter(user => user.uuid)
+        .filter(user => {
+          return user.uuid
+        })
         .map(user => ({
           ...user,
           ...findEqualUuid(user.uuid, state.userSettings),

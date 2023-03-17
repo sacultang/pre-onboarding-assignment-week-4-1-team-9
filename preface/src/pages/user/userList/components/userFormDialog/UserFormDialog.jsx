@@ -54,25 +54,25 @@ const UserPostFormDialog = ({ selected, setSelected, setOpenDialog, openDialog, 
   const handlePostUser = () => {
     const birth_date = new Date(birthDate.year, birthDate.month, birthDate.date)
     const newSelected = { ...selected }
-    const postBody = {
-      ...newSelected,
-      birth_date: birthDate.year ? birth_date.toISOString() : initailTimeFunc(),
-      uuid: uuidv4(),
-      last_login: initailTimeFunc(),
-      created_at: initailTimeFunc(),
-      updated_at: initailTimeFunc(),
-      age: timeDate.getUTCFullYear() - birth_date.getUTCFullYear() + 1,
-    }
-    const putBody = {
-      ...deleteKeyValue(newSelected),
-      updated_at: initailTimeFunc(),
-      last_login: initailTimeFunc(),
-    }
 
     if (newSelected.uuid) {
+      const putBody = {
+        ...deleteKeyValue(newSelected),
+        updated_at: initailTimeFunc(),
+        last_login: initailTimeFunc(),
+      }
       dispatch({ type: EDIT_USER, payload: putBody })
       dispatch({ type: GET_USER_LIST_PAGE, payload: { page, limit } })
     } else {
+      const postBody = {
+        ...newSelected,
+        birth_date: birthDate.year ? birth_date.toISOString() : initailTimeFunc(),
+        uuid: uuidv4(),
+        last_login: initailTimeFunc(),
+        created_at: initailTimeFunc(),
+        updated_at: initailTimeFunc(),
+        age: timeDate.getUTCFullYear() - birth_date.getUTCFullYear() + 1,
+      }
       dispatch({ type: ADD_USER, payload: postBody })
       dispatch({ type: GET_USER_LIST_PAGE, payload: { page, limit } })
     }
